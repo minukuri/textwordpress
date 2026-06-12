@@ -1,0 +1,25 @@
+{
+    "apiVersion": 2,
+    "name": "wptest/consultation-form",
+    "title": "Consultation Form",
+    "category": "widgets",
+    "icon": "email",
+    "attributes": {
+        "section_title": {
+            "type": "string",
+            "default": "Consultation"
+        },
+        "heading": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "form_id": {
+            "type": "string"
+        },
+        "image": {
+            "type": "string"
+        }
+    }
+}
