@@ -21,16 +21,38 @@ function wptest_blocks() {
             'render_callback' => 'hero_slider_render'
         )
     );
+    wp_register_script(
+    'about-us-block',
+    get_template_directory_uri() . '/blocks/about-us/index.js',
+    array(
+        'wp-blocks',
+        'wp-element',
+        'wp-components',
+        'wp-block-editor'
+    ),
+    filemtime(
+        get_template_directory() . '/blocks/about-us/index.js'
+    )
+);
+
+register_block_type(
+    'wptest/about-us',
+    array(
+        'editor_script'   => 'about-us-block',
+        'render_callback' => 'about_us_render'
+    )
+);
     
     }
 
 add_action('init', 'wptest_blocks');
-
 function hero_slider_render($attributes) {
-
     ob_start();
-
     include get_template_directory() . '/blocks/hero-slider/render.php';
-
+    return ob_get_clean();
+}
+function about_us_render($attributes) {
+    ob_start();
+    include get_template_directory() . '/blocks/about-us/render.php';
     return ob_get_clean();
 }

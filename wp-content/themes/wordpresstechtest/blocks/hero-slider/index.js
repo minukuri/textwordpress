@@ -1,3 +1,4 @@
+(function () {
 const { registerBlockType } = wp.blocks;
 const { TextControl, Button } = wp.components;
 const { MediaUpload } = wp.blockEditor;
@@ -147,3 +148,4 @@ registerBlockType('wptest/hero-slider', {
     }
 
 });
+})();
