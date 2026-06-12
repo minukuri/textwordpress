@@ -42,6 +42,28 @@ register_block_type(
         'render_callback' => 'about_us_render'
     )
 );
+
+wp_register_script(
+    'practice-areas-block',
+    get_template_directory_uri() . '/blocks/practice-areas/index.js',
+    array(
+        'wp-blocks',
+        'wp-element',
+        'wp-components',
+        'wp-block-editor'
+    ),
+    filemtime(
+        get_template_directory() . '/blocks/practice-areas/index.js'
+    )
+);
+
+register_block_type(
+    'wptest/practice-areas',
+    array(
+        'editor_script'   => 'practice-areas-block',
+        'render_callback' => 'practice_areas_render'
+    )
+);
     
     }
 
@@ -54,5 +76,11 @@ function hero_slider_render($attributes) {
 function about_us_render($attributes) {
     ob_start();
     include get_template_directory() . '/blocks/about-us/render.php';
+    return ob_get_clean();
+}
+
+function practice_areas_render($attributes){
+    ob_start();
+    include get_template_directory() . '/blocks/practice-areas/render.php';
     return ob_get_clean();
 }

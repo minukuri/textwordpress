@@ -1,0 +1,16 @@
+{
+    "apiVersion": 2,
+    "name": "wptest/practice-areas",
+    "title": "Practice Areas",
+    "category": "widgets",
+    "icon": "portfolio",
+    "attributes": {
+        "section_title": {
+            "type": "string",
+            "default": "Practice Areas"
+        },
+        "heading": {
+            "type": "string"
+        }
+    }
+}
