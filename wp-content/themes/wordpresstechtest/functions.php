@@ -102,3 +102,16 @@ wp_enqueue_script(
     );
 }
 add_action('wp_enqueue_scripts','wptest_enqueue_assets');
+
+// MENU 
+
+function wptest_theme_setup() {
+    register_nav_menus(
+        array(
+            'primary_menu' => __('Primary Menu', 'wptest'),
+            'footer_menu'  => __('Footer Quick Links', 'wptest')
+        )
+    );
+
+}
+add_action('after_setup_theme', 'wptest_theme_setup');
