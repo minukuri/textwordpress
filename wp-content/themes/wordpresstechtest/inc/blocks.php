@@ -21,6 +21,16 @@ function wptest_blocks() {
             'render_callback' => 'hero_slider_render'
         )
     );
+    
     }
 
 add_action('init', 'wptest_blocks');
+
+function hero_slider_render($attributes) {
+
+    ob_start();
+
+    include get_template_directory() . '/blocks/hero-slider/render.php';
+
+    return ob_get_clean();
+}
