@@ -65,7 +65,7 @@ register_block_type(
     )
 );
 
-register_script(
+wp_register_script(
     'consultation-form-block',
     get_template_directory_uri() . '/blocks/consultation-form/index.js',
     array(
