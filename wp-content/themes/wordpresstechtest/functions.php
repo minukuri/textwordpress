@@ -1,4 +1,5 @@
 <?php
+require_once get_template_directory() . '/inc/blocks.php';
 function wptest_enqueue_assets() {
 
     wp_enqueue_style(
