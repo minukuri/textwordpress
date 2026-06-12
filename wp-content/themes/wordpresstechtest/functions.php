@@ -116,3 +116,23 @@ function wptest_theme_setup() {
 
 }
 add_action('after_setup_theme', 'wptest_theme_setup');
+
+function wptest_practice_area() {
+    register_post_type('practice_area', array(
+        'labels' => array(
+            'name'          => 'Practice Areas',
+            'singular_name' => 'Practice Area'
+        ),
+        'public'       => true,
+        'supports'     => array(
+            'title',
+            'editor',
+            'thumbnail',
+            'excerpt'
+        ),
+        'show_in_rest' => true
+
+    ));
+}
+
+add_action('init', 'wptest_practice_area');
