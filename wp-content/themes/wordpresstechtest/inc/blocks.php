@@ -64,6 +64,28 @@ register_block_type(
         'render_callback' => 'practice_areas_render'
     )
 );
+
+register_script(
+    'consultation-form-block',
+    get_template_directory_uri() . '/blocks/consultation-form/index.js',
+    array(
+        'wp-blocks',
+        'wp-element',
+        'wp-components',
+        'wp-block-editor'
+    ),
+    filemtime(
+        get_template_directory() . '/blocks/consultation-form/index.js'
+    )
+);
+
+register_block_type(
+    'wptest/consultation-form',
+    array(
+        'editor_script'   => 'consultation-form-block',
+        'render_callback' => 'consultation_form_render'
+    )
+);
     
     }
 
@@ -82,5 +104,10 @@ function about_us_render($attributes) {
 function practice_areas_render($attributes){
     ob_start();
     include get_template_directory() . '/blocks/practice-areas/render.php';
+    return ob_get_clean();
+}
+function consultation_form_render($attributes) {
+    ob_start();
+    include get_template_directory() . '/blocks/consultation-form/render.php';
     return ob_get_clean();
 }
